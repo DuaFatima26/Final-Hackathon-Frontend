@@ -14,7 +14,7 @@ const ProfileForm = () => {
       if (!user) return;
 
       const token = await user.getIdToken();
-      const res = await fetch("http://localhost:5000/api/profile/me", {
+      const res = await fetch("https://final-hackathon-backend-seven.vercel.app/api/profile", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -43,7 +43,7 @@ const ProfileForm = () => {
     setLoading(true);
     const token = await user.getIdToken();
 
-    const res = await fetch("http://localhost:5000/api/profile", {
+    const res = await fetch("https://final-hackathon-backend-seven.vercel.app/api/profile", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
